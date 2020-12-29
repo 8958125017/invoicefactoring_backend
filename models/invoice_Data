@@ -1,0 +1,16 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+let invoiceData = new Schema({
+    invoiceNo  : {type:String ,unique:true},
+    invoice_doc_1: {type:String},
+    dateOfInvoice: {type :String},
+    paymentDate: {type:String},   
+    sts : {type:String},
+    blockaddr : { type : String },
+    pubBlockaddr : {type: String},
+    cts : { type:Date, default:Date.now }
+    
+})
+
+module.exports = mongoose.model('invoiceData',invoiceData);
